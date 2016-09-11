@@ -1,9 +1,9 @@
 **A symbol is a unique and immutable data type and may be used as an identifier for object properties**
 
 You can use it, with this synthax :<br>
-`var symbol = new Symbol();`<br>
-`var symbol = new Symbol("keyName");`<br>
-_keyName is an identifier name for the symbol_<br>
+`var symbol = Symbol();`<br>
+`var symbol = Symbol("keyName");`<br>
+_keyName is a description for the symbol_<br>
 
 **Why should I use it ?**<br>
 Symbols are values that programs can create and use as property keys without risking name collisions.<br>
