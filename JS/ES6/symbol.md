@@ -77,3 +77,4 @@ Even if you declare another *Symbol('type')* result will not be the same.<br>
 **Source for more details**<br>
 [ES6 In Depth: Symbols](https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/)<br>
 [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)<br>
+[Metaprogramming in ES6: Symbols and why they're awesome](https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/)<br>
