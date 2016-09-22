@@ -1,7 +1,7 @@
 **A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.**
 
 You can use it, with this synthax :<br>
-`var worker = new Worker("script_workers.js");`<br>
+                `var worker = new Worker("script_workers.js");`<br>
 _The code that a web worker execute needs to be contained in a separate file because it is run in an isolated thread "script_worker.js"_<br>
 
 **Why should I use it ?**<br>
@@ -12,36 +12,36 @@ The Web Workers specification defines an API for spawning background scripts in 
 **An example**<br>
 
 At first check if the user's browser support web worker.
-    if (typeof(Worker) !== "undefined") {
-        // Web worker support!
-    } else {
-        // No Web Worker support.
-    }
+                if (typeof(Worker) !== "undefined") {
+                    // Web worker support!
+                } else {
+                    // No Web Worker support.
+                }
 
 Then, this is a script that take a long time to be fully execute, result is a freezing web page for some second :
 _These code has been implemented by a senior developer don't try this at home_
 
 script JavaScript : _main.js_
-    var res = 0;
-    for(var i = 0; i < 5000000000 ;i++){
-       res += i;
-    };
+                var res = 0;
+                for(var i = 0; i < 5000000000 ;i++){
+                   res += i;
+                };
 Adding this script to a Html page can cause some freeze.
 
 To prevent html page to be in the state, you can use a web worker to do a long process script ( long calcul, read / parse a file, etc ).
 Usually another file is using to implement the script of the worker but you can use a blob :
 
-var blob = new Blob([
-    "onmessage = function(e) { var res = 0;for(var i = 0; i < 5000000000 ;i++){res += i;};postMessage(res); }"]);
-
-// Obtain a blob URL reference to our worker 'file'.
-var blobURL = window.URL.createObjectURL(blob);
-
-var worker = new Worker(blobURL);
-worker.onmessage = function(e) {
-    console.log(e.data);
-};
-worker.postMessage(""); // Start the worker.
+                var blob = new Blob([
+                    "onmessage = function(e) { var res = 0;for(var i = 0; i < 5000000000 ;i++){res += i;};postMessage(res); }"]);
+                
+                // Obtain a blob URL reference to our worker 'file'.
+                var blobURL = window.URL.createObjectURL(blob);
+                
+                var worker = new Worker(blobURL);
+                worker.onmessage = function(e) {
+                    console.log(e.data);
+                };
+                worker.postMessage(""); //Start the worker.
 
 **Source for more details**<br>
 [The Basics of Web Workers](http://www.html5rocks.com/en/tutorials/workers/basics/)<br>
