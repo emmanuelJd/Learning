@@ -2,7 +2,7 @@
 
 You can use it, with this synthax :<br>
 
-        `var worker = new Worker("script_workers.js");`<br>
+        var worker = new Worker("script_workers.js");
                 
 _The code that a web worker execute needs to be contained in a separate file because it is run in an isolated thread "script_worker.js"_<br>
 
