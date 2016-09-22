@@ -21,7 +21,7 @@ At first check if the user's browser support web worker.
 Then, this is a script that take a long time to be fully execute, result is a freezing web page for some second :
 _These code has been implemented by a senior developer don't try this at home_
 
-script JavaScript : _main.js_
+script JavaScript : _main.js_ <br>
                 var res = 0;
                 for(var i = 0; i < 5000000000 ;i++){
                    res += i;
@@ -29,7 +29,7 @@ script JavaScript : _main.js_
 Adding this script to a Html page can cause some freeze.
 
 To prevent html page to be in the state, you can use a web worker to do a long process script ( long calcul, read / parse a file, etc ).
-Usually another file is using to implement the script of the worker but you can use a blob :
+Usually another file is using to implement the script of the worker but you can use a blob :<br>
 
                 var blob = new Blob([
                     "onmessage = function(e) { var res = 0;for(var i = 0; i < 5000000000 ;i++){res += i;};postMessage(res); }"]);
